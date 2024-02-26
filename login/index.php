@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <button class="btn btn-primary" type="submit"> Ingresar</button>
+                        <button class="btn btn-primary btn-block" type="submit"> Ingresar</button>
                         </div>
                     </div>
 
