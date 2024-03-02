@@ -13,13 +13,13 @@ $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
 $contador = 0;
 foreach ($usuarios as $usuario) {
     $password_tabla = $usuario['password'];
-    $contador=$contador +1;
+    $contador = $contador + 1;
 }
 
-if (($contador > 0) && ($password === $password_tabla)){
+if (($contador > 0) && ($password === $password_tabla)) {
     echo "Datos Correctos";
+    header('Location:' . APP_URL . "/admin");
 } else {
     echo "Datos incorrectos";
-print_r ($password_tabla);
+    header('Location:' . APP_URL . "/login");
 }
-?>
