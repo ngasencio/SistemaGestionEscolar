@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <?php
@@ -12,18 +13,17 @@ if (isset($_SESSION['mensaje'])) {
     <script>
         var mensaje = '<?= $mensaje; ?>';
         alert(mensaje)
-        swal({
-            title: "Good job!",
-            text: "You clicked the button!",
+        Swal.fire({
+            position: "top-end",
             icon: "success",
-            button: "Aww yiss!",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
         });
     </script>
 <?php
 }
 ?>
-
-
 
 <head>
     <meta charset="utf-8">
@@ -38,12 +38,7 @@ if (isset($_SESSION['mensaje'])) {
     <link rel="stylesheet" href="<?= APP_URL ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= APP_URL ?>/public/dist/css/adminlte.min.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.cssF" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 </head>
 
 <body class="hold-transition login-page">
