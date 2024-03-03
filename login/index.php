@@ -3,6 +3,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<?php
+session_start();
+if (isset($_SESSION['mensaje'])) {
+    $mensaje = $_SESSION['mensaje'];
+?>
+    <script>
+        var mensaje = '<?= $mensaje; ?>';
+        alert(mensaje)
+        swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+            button: "Aww yiss!",
+        });
+    </script>
+<?php
+}
+?>
+
+
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +38,12 @@
     <link rel="stylesheet" href="<?= APP_URL ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= APP_URL ?>/public/dist/css/adminlte.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.cssF" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body class="hold-transition login-page">
@@ -52,15 +80,15 @@
                     </div>
                     <div class="input-group mb-3">
                         <button class="btn btn-primary btn-block" type="submit"> Ingresar</button>
-                        </div>
                     </div>
-
-
-                </form>
-
             </div>
-            <!-- /.login-card-body -->
+            </form>
+
+
+
         </div>
+        <!-- /.login-card-body -->
+    </div>
     </div>
     <!-- /.login-box -->
 

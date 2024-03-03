@@ -21,5 +21,7 @@ if (($contador > 0) && ($password === $password_tabla)) {
     header('Location:' . APP_URL . "/admin");
 } else {
     echo "Datos incorrectos";
+    session_start();
+    $_SESSION['mensaje'] = "Los Datos introducidos son incorrectos, vuelva a intentarlo";
     header('Location:' . APP_URL . "/login");
 }
